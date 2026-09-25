@@ -2,8 +2,8 @@
 
 Verified on 25 September 2026.
 
-- Portfolio: https://harsha-portfolio-self.vercel.app
-- Admin: https://harsha-portfolio-self.vercel.app/admin/login
+- Portfolio: https://harshaz.vercel.app
+- Admin: https://harshaz.vercel.app/admin/login
 - Backend: https://harsha-portfolio-api.vercel.app
 - Database: existing Neon project fragrant-dream-27213743, production branch.
 - Source: https://github.com/harshazzzz/my-portfolio-n
@@ -26,7 +26,7 @@ Backend environment:
 - DIRECT_URL: secret direct connection URL for Prisma migrations.
 - JWT_SECRET: secret random value, minimum 32 characters.
 - JWT_EXPIRES_IN=1h
-- FRONTEND_URL=https://harsha-portfolio-self.vercel.app
+- FRONTEND_URL=https://harshaz.vercel.app
 - Optional CORS_ORIGINS: additional exact HTTPS origins.
 - Optional OBSERVE_APP_KEY and OBSERVE_APP_SECRET: telemetry is disabled unless both exist.
 

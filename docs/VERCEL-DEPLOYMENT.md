@@ -1,6 +1,6 @@
 # Vercel deployment
 
-The portfolio is live at https://harsha-portfolio-self.vercel.app.
+The portfolio is live at https://harshaz.vercel.app.
 The NestJS API is live at https://harsha-portfolio-api.vercel.app.
 Both use Vercel Hobby with Neon PostgreSQL.
 
