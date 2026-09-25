@@ -39,3 +39,10 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Version the authentication template, never real local secrets.
+!.env.example
+
+.vercel
+.env*
+!.env.example

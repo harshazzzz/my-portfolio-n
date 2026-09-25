@@ -1,0 +1,16 @@
+.mobile {
+  display: none;
+}
+.desktop td {
+  overflow-wrap: anywhere;
+  max-width: 260px;
+}
+@media (max-width: 767px) {
+  .desktop {
+    display: none;
+  }
+  .mobile {
+    display: grid;
+    gap: 18px;
+  }
+}

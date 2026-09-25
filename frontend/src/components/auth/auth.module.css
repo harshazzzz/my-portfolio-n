@@ -1,0 +1,420 @@
+﻿.loginPage {
+  min-height: 100svh;
+  position: relative;
+  isolation: isolate;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 100px 20px 55px;
+  background: #050505;
+  color: #f4f6f8;
+  overflow: hidden;
+}
+.loginPage::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background-image:
+    linear-gradient(#ffffff04 1px, transparent 1px),
+    linear-gradient(90deg, #ffffff04 1px, transparent 1px);
+  background-size: 55px 55px;
+  mask-image: radial-gradient(ellipse, #000, transparent 72%);
+}
+.ambient {
+  position: absolute;
+  z-index: -1;
+  width: 600px;
+  height: 600px;
+  max-width: 100vw;
+  background:
+    radial-gradient(ellipse at 25% 30%, #00f5ff0e, transparent 60%),
+    radial-gradient(ellipse at 75% 70%, #8b5cf61b, transparent 65%);
+  filter: blur(30px);
+  pointer-events: none;
+}
+.backLink {
+  position: absolute;
+  left: 35px;
+  top: 30px;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  color: #9ea5af;
+  font-size: 12px;
+  min-height: 44px;
+}
+.backLink:hover {
+  color: #00f5ff;
+}
+.card {
+  width: min(100%, 445px);
+  padding: 40px 35px 27px;
+  border: 1px solid #ffffff16;
+  border-radius: 22px;
+  background: linear-gradient(140deg, #ffffff07, #ffffff02);
+  backdrop-filter: blur(24px);
+  box-shadow:
+    0 25px 90px #0008,
+    inset 0 1px 0 #ffffff05;
+  text-align: center;
+}
+.logo {
+  display: grid;
+  place-content: center;
+  grid-auto-flow: column;
+  width: 70px;
+  height: 70px;
+  margin: 0 auto 28px;
+  border: 1px solid #00f5ff35;
+  border-radius: 20px;
+  background: linear-gradient(140deg, #00f5ff0d, #8b5cf613);
+  font:
+    600 30px var(--font-space),
+    sans-serif;
+  letter-spacing: -2px;
+  box-shadow: 0 0 30px #00f5ff08;
+}
+.logo span,
+.brand span {
+  color: #00f5ff;
+}
+.eyebrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  font:
+    8px var(--font-code),
+    monospace;
+  letter-spacing: 1.8px;
+  color: #67e4e8;
+}
+.card h1 {
+  font:
+    500 36px/1.2 var(--font-space),
+    sans-serif;
+  letter-spacing: -1.3px;
+  margin: 18px 0 14px;
+}
+.intro {
+  font-size: 12px;
+  color: #a1a7b1;
+  line-height: 1.9;
+  margin: 0;
+}
+.divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #ffffff18, transparent);
+  margin: 28px 0;
+}
+.loginButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 13px;
+  width: 100%;
+  min-height: 52px;
+  padding: 13px 16px;
+  border: 1px solid #00f5ff38;
+  border-radius: 10px;
+  background: #ffffff06;
+  color: #f5f7fa;
+  font-size: 12px;
+  font-weight: 500;
+  transition:
+    transform 0.2s,
+    border-color 0.2s,
+    box-shadow 0.2s;
+}
+.loginButton:hover:not(:disabled) {
+  transform: translateY(-2px);
+  border-color: #00f5ff80;
+  box-shadow: 0 0 25px #00f5ff18;
+}
+.loginButton:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+.loginButton:focus-visible,
+.secondaryButton:focus-visible,
+.adminNav a:focus-visible,
+.backLink:focus-visible {
+  outline: 2px solid #00f5ff;
+  outline-offset: 4px;
+}
+.securityNote {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 7px;
+  font-size: 9px;
+  line-height: 1.8;
+  color: #919aaa;
+  margin: 22px 0 28px;
+}
+.securityNote svg {
+  margin-top: 2px;
+  flex-shrink: 0;
+}
+.footer {
+  display: block;
+  padding-top: 20px;
+  border-top: 1px solid #ffffff0c;
+  font:
+    7px var(--font-code),
+    monospace;
+  letter-spacing: 1.8px;
+  color: #717b89;
+}
+.bottomNote {
+  margin-top: 25px;
+  font-size: 10px;
+  color: #697480;
+}
+.error {
+  color: #ffb4b4;
+  border: 1px solid #ff777730;
+  background: #ff77770a;
+  padding: 12px;
+  border-radius: 8px;
+  font-size: 11px;
+  line-height: 1.7;
+  margin: 0 0 17px;
+}
+.notice {
+  display: block;
+  border: 1px solid #8b5cf635;
+  background: #8b5cf60a;
+  border-radius: 9px;
+  color: #c1b4dd;
+  padding: 13px;
+  font-size: 11px;
+  line-height: 1.8;
+  margin-bottom: 18px;
+}
+.spinner {
+  animation: spin 1s linear infinite;
+}
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+.adminPage {
+  min-height: 100svh;
+  background: #050505;
+  color: #f4f6fa;
+  padding: 25px max(20px, 6vw) 70px;
+}
+.adminHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  max-width: 1100px;
+  margin: auto;
+  padding-bottom: 22px;
+  border-bottom: 1px solid #ffffff15;
+}
+.brand {
+  font:
+    600 28px var(--font-space),
+    sans-serif;
+  letter-spacing: -2px;
+}
+.secondaryButton {
+  padding: 10px 15px;
+  border: 1px solid #ffffff25;
+  border-radius: 8px;
+  background: #ffffff07;
+  color: #effaff;
+  font-size: 11px;
+}
+.secondaryButton:disabled {
+  opacity: 0.5;
+}
+.adminNav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  max-width: 1100px;
+  margin: 25px auto;
+}
+.adminNav a {
+  padding: 12px 17px;
+  border: 1px solid #ffffff12;
+  border-radius: 8px;
+  color: #b7c4d3;
+  font-size: 12px;
+}
+.adminNav a:hover {
+  color: #00f5ff;
+  border-color: #00f5ff40;
+}
+.protectedCard {
+  max-width: 1100px;
+  margin: 35px auto;
+  padding: 35px;
+  border: 1px solid #ffffff15;
+  border-radius: 18px;
+  background: linear-gradient(120deg, #00f5ff05, #8b5cf607);
+}
+.protectedCard .eyebrow {
+  justify-content: flex-start;
+}
+.protectedCard h1 {
+  font:
+    500 36px var(--font-space),
+    sans-serif;
+  margin: 20px 0;
+}
+.protectedCard p {
+  color: #a6b0bd;
+  font-size: 13px;
+  line-height: 1.9;
+  overflow-wrap: anywhere;
+}
+.protectedCard .notice {
+  margin-top: 25px;
+}
+@media (max-width: 480px) {
+  .card {
+    padding: 32px 23px 24px;
+  }
+  .card h1 {
+    font-size: 32px;
+  }
+  .backLink {
+    top: 18px;
+    left: 22px;
+  }
+  .adminHeader > .eyebrow {
+    display: none;
+  }
+  .protectedCard {
+    padding: 24px;
+  }
+  .adminNav {
+    gap: 7px;
+  }
+  .adminNav a {
+    font-size: 11px;
+    padding: 10px 12px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .loginButton {
+    transition: none;
+  }
+  .loginButton:hover:not(:disabled) {
+    transform: none;
+  }
+  .spinner {
+    animation: none;
+  }
+}
+
+.form {
+  display: grid;
+  gap: 20px;
+  text-align: left;
+}
+.form label {
+  display: grid;
+  gap: 9px;
+  color: #a1a7b1;
+  font-size: 12px;
+}
+.form input {
+  width: 100%;
+  min-width: 0;
+  padding: 14px;
+  border-radius: 10px;
+  border: 1px solid #ffffff25;
+  background: #05050580;
+  color: #f4f6f8;
+  outline: none;
+  transition:
+    border-color 0.2s,
+    box-shadow 0.2s;
+}
+.form input:focus-visible {
+  border-color: #00f5ff;
+  box-shadow: 0 0 20px #00f5ff18;
+}
+.workspace {
+  display: grid;
+  grid-template-columns: 200px minmax(0, 1fr);
+  gap: 30px;
+  max-width: 1100px;
+  margin: auto;
+}
+.sidebar {
+  padding-top: 20px;
+}
+.sidebar .adminNav {
+  flex-direction: column;
+  margin: 0 0 20px;
+}
+.adminNav a[aria-current="page"] {
+  color: #00f5ff;
+  border-color: #00f5ff60;
+  background: #00f5ff0a;
+}
+@media (max-width: 767px) {
+  .workspace {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+  .sidebar .adminNav {
+    flex-direction: row;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .form input {
+    transition: none;
+  }
+}
+
+/* Keep the login content centered independently of other page layouts. */
+.adminLoginPage {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-height: 100dvh;
+  padding: 90px 20px;
+}
+.loginCenter {
+  width: min(100%, 445px);
+  margin: auto;
+  flex-shrink: 0;
+  text-align: center;
+}
+.loginCenter .card {
+  width: 100%;
+}
+.loginCenter .bottomNote {
+  text-align: center;
+}
+@media (max-width: 480px) {
+  .adminLoginPage {
+    padding: 85px 16px 45px;
+  }
+}
+
+.recoveryLink {
+  display: inline-block;
+  margin: 12px 0;
+  font-size: 12px;
+  color: var(--primary);
+  text-underline-offset: 4px;
+}
+.recoveryLink:hover {
+  text-decoration: underline;
+}
+.recoveryLink:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 4px;
+}
