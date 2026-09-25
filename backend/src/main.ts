@@ -5,7 +5,9 @@ import { AppModule, ObserveInstrument } from './app.module.js';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule, {
-    instrument: ObserveInstrument,
+    ...(process.env.OBSERVE_APP_KEY && process.env.OBSERVE_APP_SECRET
+      ? { instrument: ObserveInstrument }
+      : {}),
   });
   const config = app.get(ConfigService);
   app.enableCors({
@@ -25,4 +27,5 @@ async function bootstrap() {
   app.enableShutdownHooks();
   await app.listen(config.getOrThrow<number>('PORT'), '0.0.0.0');
 }
-await bootstrap();
+// Let the serverless runtime finish importing the entry point before listening.
+void bootstrap();

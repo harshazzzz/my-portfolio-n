@@ -2,5 +2,8 @@
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "framework": "nestjs",
   "installCommand": "npm ci && npm run prisma:generate",
-  "regions": ["sin1"]
+  "regions": ["sin1"],
+  "env": {
+    "NODE_OPTIONS": "--experimental-require-module"
+  }
 }
